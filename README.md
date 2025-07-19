@@ -1,6 +1,6 @@
 # Cetak Label BMN
 
-![Aplikasi Cetak Label BMN](LabelSetup.exe) Aplikasi Cetak Label BMN adalah solusi desktop berbasis Windows Forms yang dirancang untuk memudahkan pencetakan label inventaris Barang Milik Negara (BMN) menggunakan printer label Brother QL series (dengan dukungan SDK b-PAC). Aplikasi ini menyediakan antarmuka yang intuitif untuk mengelola data aset, mencetak label kustom, serta melakukan operasi CRUD (Create, Read, Update, Delete) data.
+![Aplikasi Cetak Label BMN](docs/screenshot_aplikasi.png) Aplikasi Cetak Label BMN adalah solusi desktop berbasis Windows Forms yang dirancang khusus untuk mempermudah pengelolaan dan pencetakan label inventaris Barang Milik Negara (BMN) menggunakan printer label Brother QL series (dengan dukungan SDK b-PAC). Aplikasi ini menyediakan antarmuka yang intuitif untuk mengelola data aset, mencetak label kustom, serta melakukan operasi CRUD (Create, Read, Update, Delete) data.
 
 ## Fitur Utama
 
@@ -44,17 +44,17 @@ Untuk menjalankan aplikasi ini, Anda memerlukan:
 
 ### Dari Rilis GitHub (Direkomendasikan untuk Pengguna)
 
-1.  Kunjungi halaman [Rilis aplikasi ini di GitHub](https://github.com/your-username/your-repo/releases) (ganti `your-username/your-repo` dengan URL repositori Anda).
-2.  Unduh file `Setup-CetakLabelBMN.exe` dari rilis terbaru.
-3.  Jalankan `Setup-CetakLabelBMN.exe` dan ikuti petunjuk instalasi.
+1.  Kunjungi halaman [Rilis aplikasi ini di GitHub](https://github.com/syzuhri/Cetak-Label-BMN/releases).
+2.  Unduh file installer `LabelSetup.exe` dari bagian `Assets` pada rilis terbaru.
+3.  Jalankan `LabelSetup.exe` dan ikuti petunjuk instalasi.
     * **Penting:** Pastikan **Brother b-PAC Client Component** terinstal di komputer Anda **sebelum** menjalankan installer aplikasi ini.
 
 ### Dari Kode Sumber (Untuk Pengembang)
 
 1.  **Clone Repositori:**
     ```bash
-    git clone [https://github.com/your-username/your-repo.git](https://github.com/your-username/your-repo.git)
-    cd your-repo
+    git clone [https://github.com/syzuhri/Cetak-Label-BMN.git](https://github.com/syzuhri/Cetak-Label-BMN.git)
+    cd Cetak-Label-BMN
     ```
 2.  **Buka di Visual Studio:**
     * Buka file `LabelPortable.sln` di Visual Studio 2022.
@@ -63,7 +63,7 @@ Untuk menjalankan aplikasi ini, Anda memerlukan:
     * Pastikan semua paket berikut terinstal: `Microsoft.Data.Sqlite`, `OfficeOpenXml`, `bpac`. Jika ada yang hilang, instal melalui tab "Browse".
 4.  **Siapkan Database SQLite:**
     * Aplikasi akan secara otomatis membuat file `db/label.db` dan skema database pertama kali dijalankan di folder `bin/Debug` (saat pengembangan) atau di folder instalasi (saat deploy).
-    * Jika Anda perlu membersihkan database (menghapus semua data dan mereset auto-increment), gunakan alat seperti [DBeaver](https://dbeaver.io/) atau [DB Browser for SQLite](https://sqlitebrowser.org/) untuk menghapus data di tabel `label`, `satker`, `barang` dan mereset `sqlite_sequence`.
+    * Jika Anda perlu mengosongkan database (menghapus semua data dan mereset auto-increment), gunakan alat seperti [DBeaver](https://dbeaver.io/) atau [DB Browser for SQLite](https://sqlitebrowser.org/) untuk menghapus data di tabel `label`, `satker`, `barang` dan mereset `sqlite_sequence`.
     * Pastikan `view_BMN2` Anda dibuat dengan definisi yang benar di database Anda (secara manual menggunakan DBeaver/DB Browser jika diperlukan).
 5.  **Siapkan Aset Aplikasi:**
     * Pastikan Anda memiliki folder `resources` di root proyek Anda (di samping file `.csproj`).
@@ -94,11 +94,3 @@ Kontribusi Anda sangat diterima! Jika Anda ingin berkontribusi, silakan fork rep
 Aplikasi ini dilisensikan di bawah Lisensi MIT. Lihat file `LICENSE` untuk detail lebih lanjut.
 
 ---
-
-**Catatan:**
-
-* Ganti `your-username/your-repo` dengan informasi repositori GitHub Anda yang sebenarnya.
-* Buat folder `docs` di root proyek GitHub Anda dan letakkan `screenshot_aplikasi.png` di sana (atau sesuaikan path-nya).
-* Pastikan Anda memiliki file `LICENSE` yang sesuai di root repositori Anda.
-* Sesuaikan instruksi `b-PAC` jika ada versi khusus atau langkah instalasi yang berbeda.
-* Jika Anda menggunakan Inno Setup untuk installer, pastikan Anda juga menjelaskan langkah instalasi b-PAC dengan jelas.
