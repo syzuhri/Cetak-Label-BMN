@@ -1,1 +1,104 @@
-# Cetak-Label-BMN
+# Cetak Label BMN
+
+![Aplikasi Cetak Label BMN](docs/screenshot_aplikasi.png) Aplikasi Cetak Label BMN adalah solusi desktop berbasis Windows Forms yang dirancang untuk memudahkan pencetakan label inventaris Barang Milik Negara (BMN) menggunakan printer label Brother QL series (dengan dukungan SDK b-PAC). Aplikasi ini menyediakan antarmuka yang intuitif untuk mengelola data aset, mencetak label kustom, serta melakukan operasi CRUD (Create, Read, Update, Delete) data.
+
+## Fitur Utama
+
+* **Manajemen Data BMN:**
+    * Tampilan data label BMN dalam `DataGridView` yang interaktif.
+    * Fungsionalitas pencarian (filter) data berdasarkan NUP.
+    * Kemampuan *soft delete* dan *restore* data.
+    * Edit langsung data label (NUP, Tahun, Merek, Ruangan/Pengguna, Kode Satker, Kode Barang) di dalam grid.
+    * Penomoran urut baris otomatis pada grid untuk tampilan yang rapi.
+* **Modul Tambah/Edit Data:**
+    * Modal (`FormAddData`) untuk menambahkan data label baru dengan input terstruktur (ComboBox untuk Satker/Barang, TextBox untuk detail).
+    * Mode edit pada `FormAddData` untuk memperbarui data label yang sudah ada, dengan pengisian otomatis dari data terpilih di grid utama.
+* **Manajemen Master Data:**
+    * Modal terpisah (`FormManageSatker` dan `FormManageBarang`) untuk mengelola master data Satuan Kerja (Satker) dan Kode Barang.
+    * Fungsionalitas tambah, edit (nama), dan hapus data master.
+    * Fungsionalitas impor data master (Satker/Barang) dari file Excel (`.xlsx`, `.xls`).
+* **Pencetakan Label Kustom:**
+    * Integrasi dengan Brother b-PAC SDK untuk pencetakan label presisi.
+    * Mendukung pemilihan template label (`.lbx`) yang berbeda.
+    * Memungkinkan pencetakan range baris tertentu dari data yang ditampilkan di grid.
+    * Dukungan untuk logo kustom pada label (melalui pengaturan gambar yang disimpan).
+
+## Teknologi
+
+* **Bahasa Pemrograman:** C#
+* **Platform:** .NET 8 (Windows Forms)
+* **Database:** SQLite (tersemat, menggunakan `Microsoft.Data.Sqlite`)
+* **UI Framework:** Windows Forms (WinForms)
+* **Pencetakan Label:** Brother b-PAC SDK
+* **Impor Excel:** EPPlus (OfficeOpenXml)
+
+## Prasyarat
+
+Untuk menjalankan aplikasi ini, Anda memerlukan:
+
+* **Windows Operating System:** (Windows 10/11)
+* **.NET 8 Desktop Runtime:** Aplikasi ini dibangun dengan .NET 8. Jika belum terinstal di sistem Anda, installer aplikasi akan memandu Anda untuk menginstalnya.
+* **Brother b-PAC Client Component:** Ini adalah SDK yang diperlukan untuk fungsionalitas pencetakan. Aplikasi akan memberikan peringatan jika tidak terinstal. Anda dapat mengunduhnya dari [situs web Brother Support](https://support.brother.com/) (cari "b-PAC SDK").
+
+## Instalasi
+
+### Dari Rilis GitHub (Direkomendasikan untuk Pengguna)
+
+1.  Kunjungi halaman [Rilis aplikasi ini di GitHub](https://github.com/your-username/your-repo/releases) (ganti `your-username/your-repo` dengan URL repositori Anda).
+2.  Unduh file `Setup-CetakLabelBMN.exe` dari rilis terbaru.
+3.  Jalankan `Setup-CetakLabelBMN.exe` dan ikuti petunjuk instalasi.
+    * **Penting:** Pastikan **Brother b-PAC Client Component** terinstal di komputer Anda **sebelum** menjalankan installer aplikasi ini.
+
+### Dari Kode Sumber (Untuk Pengembang)
+
+1.  **Clone Repositori:**
+    ```bash
+    git clone [https://github.com/your-username/your-repo.git](https://github.com/your-username/your-repo.git)
+    cd your-repo
+    ```
+2.  **Buka di Visual Studio:**
+    * Buka file `LabelPortable.sln` di Visual Studio 2022.
+3.  **Instal NuGet Packages:**
+    * Di Visual Studio, buka **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.
+    * Pastikan semua paket berikut terinstal: `Microsoft.Data.Sqlite`, `OfficeOpenXml`, `bpac`. Jika ada yang hilang, instal melalui tab "Browse".
+4.  **Siapkan Database SQLite:**
+    * Aplikasi akan secara otomatis membuat file `db/label.db` dan skema database pertama kali dijalankan di folder `bin/Debug` (saat pengembangan) atau di folder instalasi (saat deploy).
+    * Jika Anda perlu membersihkan database (menghapus semua data dan mereset auto-increment), gunakan alat seperti [DBeaver](https://dbeaver.io/) atau [DB Browser for SQLite](https://sqlitebrowser.org/) untuk menghapus data di tabel `label`, `satker`, `barang` dan mereset `sqlite_sequence`.
+    * Pastikan `view_BMN2` Anda dibuat dengan definisi yang benar di database Anda (secara manual menggunakan DBeaver/DB Browser jika diperlukan).
+5.  **Siapkan Aset Aplikasi:**
+    * Pastikan Anda memiliki folder `resources` di root proyek Anda (di samping file `.csproj`).
+    * Tempatkan file template label (`.lbx`) Anda (misalnya `nup36.lbx`, `nup24.lbx`, `nup18.lbx`) di dalam folder `resources`.
+    * Tempatkan file ikon aplikasi (`app.ico`) di dalam folder `resources`.
+6.  **Build Proyek:**
+    * Di Visual Studio, pilih **Build** > **Rebuild Solution** (dalam konfigurasi `Release` untuk deployment).
+7.  **Jalankan Aplikasi:**
+    * Tekan `F5` untuk menjalankan aplikasi dalam mode debug, atau navigasi ke `bin/Debug` (atau `bin/Release`) dan jalankan `LabelPortable.exe`.
+
+## Penggunaan
+
+1.  **Tampilan Utama:** Aplikasi akan menampilkan grid data label BMN.
+2.  **Pencarian & Filter:** Gunakan kotak pencarian dan checkbox untuk memfilter data.
+3.  **Tambah Data Baru:** Klik tombol "Tambah Data Label" untuk membuka modal pengisian data.
+4.  **Edit Data Grid:** Double-klik pada baris di grid untuk membuka modal edit (`FormAddData`) dengan data yang sudah terisi. Anda juga bisa mengedit beberapa kolom langsung di grid.
+5.  **Kelola Master Data:** Gunakan tombol "+" di modal tambah data untuk membuka modal manajemen Satker atau Barang.
+6.  **Impor Data Master:** Di modal manajemen Satker/Barang, gunakan tombol "Impor Excel" untuk memasukkan data dari spreadsheet.
+7.  **Pengaturan Logo:** Akses pengaturan aplikasi untuk memilih file gambar logo yang akan digunakan pada label yang dicetak.
+8.  **Cetak Label:** Pilih baris atau tentukan range baris di grid, pilih ukuran template, dan klik "Cetak".
+
+## Kontribusi
+
+Kontribusi Anda sangat diterima! Jika Anda ingin berkontribusi, silakan fork repositori ini dan ajukan Pull Request dengan perubahan Anda.
+
+## Lisensi
+
+Aplikasi ini dilisensikan di bawah Lisensi MIT. Lihat file `LICENSE` untuk detail lebih lanjut.
+
+---
+
+**Catatan:**
+
+* Ganti `your-username/your-repo` dengan informasi repositori GitHub Anda yang sebenarnya.
+* Buat folder `docs` di root proyek GitHub Anda dan letakkan `screenshot_aplikasi.png` di sana (atau sesuaikan path-nya).
+* Pastikan Anda memiliki file `LICENSE` yang sesuai di root repositori Anda.
+* Sesuaikan instruksi `b-PAC` jika ada versi khusus atau langkah instalasi yang berbeda.
+* Jika Anda menggunakan Inno Setup untuk installer, pastikan Anda juga menjelaskan langkah instalasi b-PAC dengan jelas.
