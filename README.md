@@ -1,6 +1,6 @@
 # Cetak Label BMN
 
-![Aplikasi Cetak Label BMN](docs/screenshot_aplikasi.png) Aplikasi Cetak Label BMN adalah solusi desktop berbasis Windows Forms yang dirancang untuk memudahkan pencetakan label inventaris Barang Milik Negara (BMN) menggunakan printer label Brother QL series (dengan dukungan SDK b-PAC). Aplikasi ini menyediakan antarmuka yang intuitif untuk mengelola data aset, mencetak label kustom, serta melakukan operasi CRUD (Create, Read, Update, Delete) data.
+![Aplikasi Cetak Label BMN](LabelSetup.exe) Aplikasi Cetak Label BMN adalah solusi desktop berbasis Windows Forms yang dirancang untuk memudahkan pencetakan label inventaris Barang Milik Negara (BMN) menggunakan printer label Brother QL series (dengan dukungan SDK b-PAC). Aplikasi ini menyediakan antarmuka yang intuitif untuk mengelola data aset, mencetak label kustom, serta melakukan operasi CRUD (Create, Read, Update, Delete) data.
 
 ## Fitur Utama
 
