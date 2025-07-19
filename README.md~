@@ -1,6 +1,6 @@
 # Cetak Label BMN
 
-![Aplikasi Cetak Label BMN](docs/screenshot_aplikasi.png) Aplikasi Cetak Label BMN adalah solusi desktop berbasis Windows Forms yang dirancang khusus untuk mempermudah pengelolaan dan pencetakan label inventaris Barang Milik Negara (BMN) menggunakan printer label Brother (dengan dukungan SDK b-PAC). Menggunakan b-Pac Ver.3.4(32-bit) ini [Daftar printer yang didukung](https://support.brother.com/g/s/es/dev/en/bpac/environment/index.html?c=eu_ot&lang=en&navi=offall&comple=on&redirect=on). Aplikasi ini menyediakan antarmuka yang intuitif untuk mengelola data aset, mencetak label kustom, serta melakukan operasi CRUD (Create, Read, Update, Delete) data.
+![Aplikasi Cetak Label BMN](docs/screenshot_aplikasi.png) Aplikasi Cetak Label BMN adalah solusi desktop berbasis Windows Forms yang dirancang khusus untuk mempermudah pengelolaan dan pencetakan label inventaris Barang Milik Negara (BMN) menggunakan printer label Brother QL series (dengan dukungan SDK b-PAC). Aplikasi ini menyediakan antarmuka yang intuitif untuk mengelola data aset, mencetak label kustom, serta melakukan operasi CRUD (Create, Read, Update, Delete) data.
 
 ## Fitur Utama
 
@@ -29,7 +29,7 @@
 * **Platform:** .NET 8 (Windows Forms)
 * **Database:** SQLite (tersemat, menggunakan `Microsoft.Data.Sqlite`)
 * **UI Framework:** Windows Forms (WinForms)
-* **Pencetakan Label:** Brother b-PAC SDK ver.3.4(32 Bit)
+* **Pencetakan Label:** Brother b-PAC SDK
 * **Impor Excel:** EPPlus (OfficeOpenXml)
 
 ## Prasyarat
@@ -47,7 +47,7 @@ Untuk menjalankan aplikasi ini, Anda memerlukan:
 1.  Kunjungi halaman [Rilis aplikasi ini di GitHub](https://github.com/syzuhri/Cetak-Label-BMN/releases).
 2.  Unduh file installer `LabelSetup.exe` dari bagian `Assets` pada rilis terbaru.
 3.  Jalankan `LabelSetup.exe` dan ikuti petunjuk instalasi.
-    * **Penting:** Pastikan **Brother b-PAC Client Component** terinstal di komputer Anda. **Component** b-PaAC Client sudah include dalam installer aplikasi ini, atau bisa di download dari situs resmi **Brother**.
+    * **Penting:** Pastikan **Brother b-PAC Client Component** terinstal di komputer Anda **sebelum** menjalankan installer aplikasi ini.
 
 ### Dari Kode Sumber (Untuk Pengembang)
 
