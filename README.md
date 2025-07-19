@@ -44,8 +44,8 @@ Untuk menjalankan aplikasi ini, Anda memerlukan:
 
 ### Dari Rilis GitHub (Direkomendasikan untuk Pengguna)
 
-1.  Kunjungi halaman [Rilis aplikasi ini di GitHub](https://github.com/syzuhri/Cetak-Label-BMN/releases).
-2.  Unduh file installer `LabelSetup.exe` dari bagian `Assets` pada rilis terbaru.
+1.  Kunjungi halaman [Rilis aplikasi ini di GitHub](https://github.com/syzuhri/Cetak-Label-BMN).
+2.  Unduh file installer [`LabelSetup.exe`](/LabelSetup.exe).
 3.  Jalankan `LabelSetup.exe` dan ikuti petunjuk instalasi.
     * **Penting:** Pastikan **Brother b-PAC Client Component** terinstal di komputer Anda. **Component** b-PaAC Client sudah include dalam installer aplikasi ini, atau bisa di download dari situs resmi **Brother**.
 
