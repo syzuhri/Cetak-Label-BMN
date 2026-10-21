@@ -27,7 +27,8 @@
 
 * **Bahasa Pemrograman:** C#
 * **Platform:** .NET 8 (Windows Forms)
-* **Database:** SQLite (tersemat, menggunakan `Microsoft.Data.Sqlite`)
+* **Database:** Multi-Database (SQLite tersemat, Microsoft SQL Server, MySQL, PostgreSQL)
+* **Autentikasi:** Microsoft Azure Active Directory (MSAL / Entra ID) SSO
 * **UI Framework:** Windows Forms (WinForms)
 * **Pencetakan Label:** Brother b-PAC SDK ver.3.4(32 Bit)
 * **Impor Excel:** EPPlus (OfficeOpenXml)
@@ -45,7 +46,7 @@ Untuk menjalankan aplikasi ini, Anda memerlukan:
 ### Dari Rilis GitHub (Direkomendasikan untuk Pengguna)
 
 1.  Kunjungi halaman [Rilis aplikasi ini di GitHub](https://github.com/syzuhri/Cetak-Label-BMN/releases).
-2.  Unduh file installer [`LabelSetup.exe`](https://github.com/syzuhri/Cetak-Label-BMN/releases/download/v1.0.0/LabelSetup.exe).
+2.  Unduh file installer [`LabelSetup.exe`](https://github.com/syzuhri/Cetak-Label-BMN/releases/latest/download/LabelSetup.exe).
 3.  Jalankan `LabelSetup.exe` dan ikuti petunjuk instalasi.
     * **Penting:** Pastikan **Brother b-PAC Client Component** terinstal di komputer Anda. **Component** b-PaAC Client sudah include dalam installer aplikasi ini, atau bisa di download dari situs resmi **Brother**.
 
