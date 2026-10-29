@@ -1,3 +1,48 @@
+# Catatan Rilis (Release Notes) - v1.2.0
+
+**Tanggal Rilis:** 29 Oktober 2026  
+**Pengembang:** Syaifudin Zuhri  
+**Instansi:** Kedeputian Teknologi Informasi Penanaman Modal Kementerian Investasi Hilirisasi/BKPM  
+**File Installer:** `LabelSetup.exe` (v1.2.0)
+
+---
+
+## Ringkasan Pembaruan (Release Highlights)
+
+Versi 1.2.0 menghadirkan modernisasi antarmuka pengguna berbasis **Windows 11 Fluent Design (WPF-UI)** dan peningkatan runtime ke **.NET 9.0 Windows (C# 13)**, menghasilkan pengalaman pengguna yang jauh lebih intuitif, estetis, dan sangat responsif. Seluruh fungsionalitas inti pencetakan label Brother b-PAC, multi-database, serta autentikasi Azure AD tetap terjaga dengan peningkatan kenyamanan operasional.
+
+---
+
+### Fitur Baru & Peningkatan Utama v1.2.0
+
+#### 1. Desain Antarmuka Windows 11 Fluent (WPF-UI)
+* **Tema Adaptif Dark & Light Mode**:
+  * Dilengkapi tombol toggle tema (Matahari / Bulan) di TitleBar untuk beralih mode terang dan gelap secara instan.
+  * Seluruh teks, kartu, dialog, dan elemen data otomatis beradaptasi dengan kontras yang optimal.
+* **Navigasi Sidebar Modern**:
+  * Menu samping Fluent (Cetak Label, Data Barang, Satuan Kerja, Pengaturan, Tentang).
+  * Menu **Sign Out** terintegrasi di bagian bawah sidebar dengan konfirmasi keluar dan pembersihan sesi aman.
+
+#### 2. Manajemen Data & Grid Responsif
+* **Single-Click Checkbox**:
+  * Centang/batalkan pilihan data cukup dengan 1 kali klik instan tanpa jeda edit-mode.
+  * Pelebaran kolom ceklis dan penomoran urut baris (`No`) untuk kenyamanan identifikasi data.
+  * Pembagian lebar kolom yang proporsional antara `Nama Barang` dan `Merek / Tipe`.
+* **Toolbar Aksi 3 Tingkat Terstruktur**:
+  * **Tingkat 1**: Pencarian live, pemilihan template label, pemilihan printer Brother, dan tombol Cetak Label Utama.
+  * **Tingkat 2**: Tambah Data, Edit Data dinamis (muncul saat 1 item dipilih atau klik dua kali pada baris), Hapus Data dinamis (single/multi-select), Pulihkan Data, serta Impor & Ekspor Excel.
+  * **Tingkat 3**: Tombol *Pilih Semua*, *Batal Pilih* (dinamis aktif/nonaktif), dan Ceklis *Tampilkan Data Terhapus* berdampingan secara rapi beserta indikator jumlah item terpilih.
+* **Visualisasi Data Terhapus yang Elegan**:
+  * Data terhapus ditampilkan dengan efek strikethrough dan warna redup yang nyaman di mata tanpa mengaburkan teks.
+
+#### 3. Dialog Cetak Range Modern & Dropdown Template Ramah Pengguna
+* **Dialog Print Range Fluent**:
+  * Jika tombol cetak diklik saat tidak ada item yang dicentang, aplikasi menampilkan dialog modern yang meminta pengguna memasukkan nomor urut baris yang ingin dicetak (contoh: `1-10` atau `5`).
+* **Pilihan Template Label Ramah Pengguna**:
+  * Dropdown template menampilkan ukuran label yang jelas: **`Label Size 18`**, **`Label Size 24`**, dan **`Label Size 36`** (memetakan otomatis ke file `.lbx` b-PAC).
+
+---
+
 # Catatan Rilis (Release Notes) - v1.1.0
 
 **Tanggal Rilis:** 21 Oktober 2026  
