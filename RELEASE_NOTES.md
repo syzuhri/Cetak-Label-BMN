@@ -1,3 +1,26 @@
+# Catatan Rilis (Release Notes) - v1.2.9
+
+**Tanggal Rilis:** 30 Oktober 2026  
+**Pengembang:** Syaifudin Zuhri  
+**Instansi:** Kedeputian Teknologi Informasi Penanaman Modal Kementerian Investasi Hilirisasi/BKPM  
+**File Installer:** LabelSetup.exe (v1.2.9)
+
+---
+
+## Ringkasan Pembaruan (Release Highlights) - v1.2.9
+
+Versi 1.2.9 menghadirkan optimasi performa dan stabilitas jaringan untuk koneksi cloud Azure SQL Serverless:
+
+1. **⏱️ Eliminasi Timeout Cold Boot Azure SQL (Connection Timeout=90)**:
+   - Menambah batas waktu inisiasi koneksi ke 90 detik untuk mengakomodasi waktu wake-up (*cold start*) database serverless saat pertama kali diakses setelah periode jeda/pause otomatis.
+2. **🚀 Peningkatan Throughput & Transfer Data Cepat (Packet Size=32767)**:
+   - Memaksimalkan ukuran paket jaringan protokol TDS SQL Server dari standar 4 KB menjadi 32 KB (32.767 bytes).
+   - Memangkas *network round-trips* hingga ~75-80%, menghilangkan jeda waktu saat memuat ribuan data label BMN (9.300+ baris) ke antarmuka aplikasi.
+3. **🔄 Auto-Migration & Enkripsi Kredensial**:
+   - Konfigurasi SQL Server pada instalasi lama yang masih menggunakan parameter default secara otomatis dimigrasikan ke parameter timeout 90s & packet size 32KB.
+   - String koneksi teroptimasi diamankan dengan enkripsi AES-256-CBC di App.config.
+
+---
 # Catatan Rilis (Release Notes) - v1.2.8
 
 **Tanggal Rilis:** 30 Oktober 2026  
