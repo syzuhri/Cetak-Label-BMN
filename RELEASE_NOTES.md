@@ -1,3 +1,27 @@
+# Catatan Rilis (Release Notes) - v1.2.7
+
+**Tanggal Rilis:** 30 Oktober 2026  
+**Pengembang:** Syaifudin Zuhri  
+**Instansi:** Kedeputian Teknologi Informasi Penanaman Modal Kementerian Investasi Hilirisasi/BKPM  
+**File Installer:** `LabelSetup.exe` (v1.2.7)
+
+---
+
+## Ringkasan Pembaruan (Release Highlights) - v1.2.7
+
+Versi 1.2.7 memperbaiki bug transaksi restore pada database PostgreSQL dan menghadirkan tombol langsung pasang update di navbar:
+
+1. **🛠️ Perbaikan Restorasi Database PostgreSQL (Neon Cloud / On-Premise)**:
+   - Memperbaiki error `25P02: current transaction is aborted, commands ignored until end of transaction block`.
+   - Inisialisasi skema dan pembuatan tabel `satker`, `barang`, dan `label` kini dipastikan dieksekusi sebelum transaksi dimulai.
+   - Perintah DDL `ALTER TABLE` dikeluarkan dari blok transaksi agar tidak membatalkan transaksi yang sedang berlangsung pada dialek PostgreSQL.
+   - Penambahan tipe data eksplisit `DbType.String` pada kolom `dbrl` dan `deleted_row` berstatus `NULL` untuk stabilitas driver Npgsql.
+2. **⚡ Tombol Cepat "Pasang Update" di Navigation Bar**:
+   - Menambahkan menu baru di bilah navigasi bawah (navbar footer) yang otomatis muncul begitu berkas installer baru selesai diunduh di latar belakang.
+   - Pengguna dapat me-restart dan memasang pembaruan kapan saja melalui banner notifikasi atas maupun tombol navbar.
+
+---
+
 # Catatan Rilis (Release Notes) - v1.2.6
 
 **Tanggal Rilis:** 30 Oktober 2026  
