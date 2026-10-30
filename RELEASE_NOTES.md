@@ -1,3 +1,24 @@
+# Catatan Rilis (Release Notes) - v1.2.5
+
+**Tanggal Rilis:** 30 Oktober 2026  
+**Pengembang:** Syaifudin Zuhri  
+**Instansi:** Kedeputian Teknologi Informasi Penanaman Modal Kementerian Investasi Hilirisasi/BKPM  
+**File Installer:** `LabelSetup.exe` (v1.2.5)
+
+---
+
+## Ringkasan Pembaruan (Release Highlights) - v1.2.5
+
+Versi 1.2.5 menyempurnakan migrasi otomatis pengaturan koneksi cloud pada mesin pengguna serta perbaikan installer:
+
+1. **☁️ Auto-Migrasi Pengaturan Cloud di Halaman Pengaturan**:
+   - Memperbarui pengaturan legacy (seperti `localhost` pada MySQL atau IP lokal lama `10.2.237.99` pada PostgreSQL) secara otomatis menjadi koneksi cloud resmi (TiDB Cloud MySQL, Neon Cloud PostgreSQL, Azure SQL, dan MongoDB Atlas).
+   - Tombol **Reset ke Default** kini mereset seluruh koneksi database ke konfigurasi cloud resmi bawaan.
+2. **📦 Pembaruan Konfigurasi Installer**:
+   - Memastikan file `LabelPortable.dll.config` selalu diperbarui saat update aplikasi sehingga koneksi cloud langsung aktif, dengan tetap memproteksi database lokal (`db\label.db`, `db\label.litedb`) agar tidak tertimpa.
+
+---
+
 # Catatan Rilis (Release Notes) - v1.2.4
 
 **Tanggal Rilis:** 30 Oktober 2026  
