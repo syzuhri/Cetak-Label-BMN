@@ -1,3 +1,29 @@
+# Catatan Rilis (Release Notes) - v1.2.6
+
+**Tanggal Rilis:** 30 Oktober 2026  
+**Pengembang:** Syaifudin Zuhri  
+**Instansi:** Kedeputian Teknologi Informasi Penanaman Modal Kementerian Investasi Hilirisasi/BKPM  
+**File Installer:** `LabelSetup.exe` (v1.2.6)
+
+---
+
+## Ringkasan Pembaruan (Release Highlights) - v1.2.6
+
+Versi 1.2.6 menghadirkan penguatan keamanan kredensial database tingkat tinggi dan fitur pembaca catatan rilis langsung di dalam aplikasi:
+
+1. **🔐 Enkripsi Kredensial Database App.config (AES-256 & PBKDF2)**:
+   - Seluruh string koneksi database yang tersimpan di file `App.config` dan `LabelPortable.dll.config` kini dienkripsi secara penuh menggunakan standar **AES-256-CBC** dengan derivasi kunci **PBKDF2 SHA-256 (100.000 iterasi)** dan dynamic Initialization Vector (IV).
+   - *Power user* maupun pengguna tingkat lanjut tidak dapat membaca password, username, maupun host database secara mentah (*plaintext*) melalui text editor di luar aplikasi.
+   - Proses enkripsi dan dekripsi berjalan secara transparan dan otomatis di balik layar, tetap mendukung kompatibilitas mundur jika admin memasukkan string baru.
+2. **📜 Tombol Catatan Rilis (Changelog) di Halaman Tentang**:
+   - Ditambahkan tombol **"Catatan Rilis"** di samping tombol *Periksa Pembaruan* pada halaman **Tentang**.
+   - Pengguna kini dapat membaca seluruh riwayat versi dan detail pembaruan kapan saja melalui jendela pembaca (*Changelog Window*) berdesain Fluent Mica.
+3. **⚡ Tombol Cepat Restart Now pada Banner Notifikasi Pembaruan & Pengaturan**:
+   - Banner notifikasi otomatis pembaruan di latar belakang kini secara visual menyertakan tombol **Restart Now** langsung di bar notifikasi hijau.
+   - Peringatan banner restart di halaman Pengaturan kini secara konsisten menampilkan tombol aksi **Restart Now** saat pergantian jenis database.
+
+---
+
 # Catatan Rilis (Release Notes) - v1.2.5
 
 **Tanggal Rilis:** 30 Oktober 2026  
