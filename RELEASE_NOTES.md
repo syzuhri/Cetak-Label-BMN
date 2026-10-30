@@ -1,3 +1,29 @@
+# Catatan Rilis (Release Notes) - v1.2.4
+
+**Tanggal Rilis:** 30 Oktober 2026  
+**Pengembang:** Syaifudin Zuhri  
+**Instansi:** Kedeputian Teknologi Informasi Penanaman Modal Kementerian Investasi Hilirisasi/BKPM  
+**File Installer:** `LabelSetup.exe` (v1.2.4)
+
+---
+
+## Ringkasan Pembaruan (Release Highlights) - v1.2.4
+
+Versi 1.2.4 menghadirkan konfigurasi cloud bawaan siap pakai untuk seluruh mesin database yang didukung, integrasi otomatis SSL/TLS, serta tombol aksi cepat restart aplikasi:
+
+1. **☁️ Integrasi Penuh 4 Layanan Database Cloud Bawaan**:
+   - **Microsoft Azure SQL Database**: Terintegrasi langsung dengan enkripsi TLS dan bypass sertifikat (`labelbmn.database.windows.net`, DB: `free-sql-db-6520239`).
+   - **MongoDB Atlas Cloud (NoSQL)**: Terintegrasi dengan connection string SRV Atlas (`cluster0.9klqlcl.mongodb.net`, DB: `bmn_label`).
+   - **PostgreSQL Cloud (Neon Serverless)**: Terintegrasi dengan koneksi SSL pooler Singapore (`ep-cold-shadow-ao8womre-pooler.c-2.ap-southeast-1.aws.neon.tech`, DB: `neondb`).
+   - **MySQL Cloud (TiDB Serverless)**: Terintegrasi dengan koneksi TLS aman (`gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000`, DB: `bmn_label`).
+2. **🔄 Tombol "Restart Now" Terpadu**:
+   - Banner notifikasi pembaruan di bilah atas kini memiliki tombol instan `[ Restart Now ]`.
+   - Simpan pengaturan database kini menampilkan dialog peringatan dengan tombol `[ Restart Now ]` dan `[ Nanti Saja ]`, serta tombol cepat di footer pengaturan.
+3. **🔒 Negosiasi SSL/TLS Otomatis**:
+   - Penambahan parameter `SslMode=Preferred` pada MySQL dan `SSL Mode=Prefer;Trust Server Certificate=true` pada PostgreSQL untuk konektivitas mulus antara lokal dan cloud tanpa kendala sertifikat.
+
+---
+
 # Catatan Rilis (Release Notes) - v1.2.3
 
 **Tanggal Rilis:** 30 Oktober 2026  
