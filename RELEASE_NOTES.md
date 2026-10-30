@@ -1,3 +1,28 @@
+# Catatan Rilis (Release Notes) - v1.2.8
+
+**Tanggal Rilis:** 30 Oktober 2026  
+**Pengembang:** Syaifudin Zuhri  
+**Instansi:** Kedeputian Teknologi Informasi Penanaman Modal Kementerian Investasi Hilirisasi/BKPM  
+**File Installer:** `LabelSetup.exe` (v1.2.8)
+
+---
+
+## Ringkasan Pembaruan (Release Highlights) - v1.2.8
+
+Versi 1.2.8 merupakan rilis pembersihan arsitektur menyeluruh (*Major Code Refactoring & Modernization*):
+
+1. **🧹 Pembersihan Penuh Kode Warisan Windows Forms**:
+   - Menghapus seluruh folder `Forms/` (12 file form dan designer lama) yang sudah tergantikan sepenuhnya oleh WPF-UI .NET 9.
+   - Menghapus service GDI+ lama (`ThemeManager.cs` dan `AnimatedBackground.cs`).
+   - Menghapus *runner* konsol manual lama (`SimpleTests.cs`), sepenuhnya mengandalkan test suite xUnit otomatis di `LabelPortable.Tests`.
+2. **✨ Dekopling & Clean Architecture di Halaman WPF**:
+   - Menghilangkan metode `DataGridView` dan coupling kontrol WinForms dari `DatabaseService.cs`.
+   - Menghapus *phantom parameter* `_dbService` di halaman WPF (`PrintPage`, `BarangPage`, `SatkerPage`, `AddDataWindow`), sehingga arsitektur murni bergantung pada `LabelApplicationService` dan domain repository.
+3. **🎯 Zero Warning & Zero Error**:
+   - Kompilasi proyek kini mencapai standar **0 Warning dan 0 Error**, dengan **67 unit test berstatus 100% PASSED**.
+
+---
+
 # Catatan Rilis (Release Notes) - v1.2.7
 
 **Tanggal Rilis:** 30 Oktober 2026  
