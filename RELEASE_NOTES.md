@@ -1,3 +1,29 @@
+# Catatan Rilis (Release Notes) - v1.2.10
+
+**Tanggal Rilis:** 30 Oktober 2026  
+**Pengembang:** Syaifudin Zuhri  
+**Instansi:** Kedeputian Teknologi Informasi Penanaman Modal Kementerian Investasi Hilirisasi/BKPM  
+**File Installer:** LabelSetup.exe (v1.2.10)
+
+---
+
+## Ringkasan Pembaruan (Release Highlights) - v1.2.10
+
+Versi 1.2.10 menghadirkan perbaikan fitur edit data label, kemudahan aksi langsung pada baris tabel, serta modernisasi dialog & notifikasi penuh dengan WPF-UI Fluent:
+
+1. **✏️ Tombol Aksi Edit Cepat di Setiap Baris Tabel**:
+   - Menambahkan kolom **Aksi** dengan ikon edit (pensil) langsung di setiap baris tabel Cetak Label BMN, sehingga pengguna dapat mengedit data tiket dalam 1x klik tanpa kebingungan.
+   - Tombol **Edit Data** pada toolbar kini selalu terlihat dan dapat langsung digunakan baik dengan memilih baris maupun mencentang kotak pilih.
+2. **🔄 Smart Upsert pada Form Tambah/Edit Label**:
+   - Jika pengguna membuka form Tambah Data namun memasukkan kombinasi Kode Satker, Kode Barang, dan NUP yang sudah ada di database, aplikasi secara cerdas menampilkan konfirmasi untuk langsung memperbarui (*update*) data tiket tersebut, mencegah error duplikasi yang membingungkan.
+   - Form Edit Data kini menginisialisasi judul, teks tombol ("Perbarui Data"), serta dropdown Satker dan Barang secara sinkron dan presisi saat dibuka.
+3. **🎨 Modernisasi Dialog Menyeluruh (100% WPF-UI Fluent)**:
+   - Mengganti seluruh sisa kotak pesan lama (System.Windows.MessageBox) di seluruh aplikasi dengan ModernDialog (Wpf.Ui.Controls.MessageBox).
+   - Seluruh pesan validasi, informasi, peringatan, dan error kini tampil modern dengan styling Fluent, sudut membulat, dan otomatis mengikuti tema Gelap/Terang (*Dark/Light mode*).
+4. **🧪 Penambahan Unit Test Suite**:
+   - Menambahkan unit test baru untuk verifikasi perubahan Kode Barang dan deteksi konflik kunci komposit (*Satker, Barang, NUP*). Total test suite kini **69 unit test berstatus 100% PASSED**.
+
+---
 # Catatan Rilis (Release Notes) - v1.2.9
 
 **Tanggal Rilis:** 30 Oktober 2026  
