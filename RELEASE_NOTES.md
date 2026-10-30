@@ -1,3 +1,29 @@
+# Catatan Rilis (Release Notes) - v1.2.3
+
+**Tanggal Rilis:** 30 Oktober 2026  
+**Pengembang:** Syaifudin Zuhri  
+**Instansi:** Kedeputian Teknologi Informasi Penanaman Modal Kementerian Investasi Hilirisasi/BKPM  
+**File Installer:** `LabelSetup.exe` (v1.2.3)
+
+---
+
+## Ringkasan Pembaruan (Release Highlights) - v1.2.3
+
+Versi 1.2.3 menghadirkan penyempurnaan stabilitas, optimasi batch restore berkecepatan tinggi, perbaikan integrasi Azure Cloud & SQL Database, serta penyelarasan antarmuka:
+
+1. **⚡ Optimasi Batch Restore & Sync Cloud (Super Cepat)**:
+   - Restorasi puluhan ribu data tiket label kini menggunakan pengelompokan batch (100 baris per transaksi), memangkas waktu restore dari ~15 menit menjadi hanya ~5-10 detik.
+2. **🛡️ Perbaikan Skema Azure SQL & String Truncation**:
+   - Menangani panjang kolom `deleted_row` menjadi `NVARCHAR(50)` dengan auto-migrasi otomatis saat inisialisasi tabel, mencegah error truncation saat memulihkan label terhapus.
+3. **🔐 Upfront Single-Consent Azure AD / Microsoft Login**:
+   - Izin akun Microsoft (`User.Read` dan `Files.ReadWrite.AppFolder`) kini diminta sekaligus di awal login, menghilangkan pop-up persetujuan berulang saat membuka menu Backup & Sync.
+4. **🎨 Tata Letak Rata Tengah Modern**:
+   - Penyelarasan kartu konten pada halaman **Pengaturan Sistem** dan **Sinkronisasi & Backup** menjadi rata tengah (*center-aligned*) sehingga seimbang dan nyaman di layar lebar.
+5. **🔒 Proteksi Database Lokal Saat Update**:
+   - Installer `LabelSetup.exe` memproteksi file database lokal (`label.db`, `label.litedb`) dan setting aplikasi agar tidak tertimpa saat instalasi update.
+
+---
+
 # Catatan Rilis (Release Notes) - v1.2.0
 
 **Tanggal Rilis:** 29 Oktober 2026  
